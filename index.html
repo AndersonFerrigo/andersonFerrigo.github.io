@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roadmap Arquiteto — Anderson 2025/2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:     #0c0d11;
+  --bg2:    #13151c;
+  --bg3:    #1a1d27;
+  --bg4:    #202330;
+  --bdr:    rgba(255,255,255,0.06);
+  --bdr2:   rgba(255,255,255,0.10);
+  --text:   #e9ebf2;
+  --muted:  #6d7491;
+  --faint:  #3a3f55;
+  --arch:   #7b9cff;
+  --data:   #f6ab35;
+  --extra:  #4fd1c5;
+  --green:  #68d391;
+  --pink:   #f687b3;
+  --arch-bg: rgba(123,156,255,0.08);
+  --data-bg: rgba(246,171,53,0.08);
+  --extra-bg:rgba(79,209,197,0.08);
+  --green-bg:rgba(104,211,145,0.08);
+  --mono: 'JetBrains Mono', monospace;
+  --sans: 'DM Sans', sans-serif;
+  --disp: 'Syne', sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.65;font-size:15px}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(12,13,17,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--bdr);padding:0 40px;display:flex;gap:0;overflow-x:auto}
+.nav a{font-family:var(--mono);font-size:11px;color:var(--muted);text-decoration:none;padding:14px 16px;white-space:nowrap;border-bottom:2px solid transparent;transition:.2s;letter-spacing:.04em}
+.nav a:hover{color:var(--text);border-bottom-color:var(--arch)}
+.nav a.active{color:var(--arch);border-bottom-color:var(--arch)}
+
+/* HERO */
+.hero{padding:72px 40px 56px;max-width:1040px;margin:0 auto}
+.hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--arch);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--arch)}
+.hero h1{font-family:var(--disp);font-size:clamp(36px,5.5vw,60px);font-weight:800;line-height:1.05;letter-spacing:-.025em;margin-bottom:22px}
+.hero h1 em{font-style:normal;color:var(--arch)}
+.hero h1 span{color:var(--data)}
+.hero p{font-size:16px;color:var(--muted);max-width:580px;line-height:1.75;margin-bottom:36px}
+.kpis{display:flex;gap:40px;flex-wrap:wrap}
+.kpi{display:flex;flex-direction:column;gap:3px}
+.kpi-n{font-family:var(--disp);font-size:32px;font-weight:700}
+.kpi-l{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.08em}
+
+/* LEGEND BAR */
+.legendbar{max-width:1040px;margin:0 auto;padding:0 40px 40px;display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+.lb-title{font-family:var(--mono);font-size:10px;color:var(--faint);letter-spacing:.12em;text-transform:uppercase}
+.lb-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}
+.lb-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.chip{display:inline-flex;align-items:center;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:4px;font-weight:500;letter-spacing:.03em;border:1px solid transparent}
+.chip-free{background:var(--green-bg);color:var(--green);border-color:rgba(104,211,145,.25)}
+.chip-paid{background:var(--data-bg);color:var(--data);border-color:rgba(246,171,53,.25)}
+.chip-arch{background:var(--arch-bg);color:var(--arch);border-color:rgba(123,156,255,.25)}
+.chip-data{background:var(--data-bg);color:var(--data);border-color:rgba(246,171,53,.25)}
+.chip-ext{background:var(--extra-bg);color:var(--extra);border-color:rgba(79,209,197,.25)}
+.chip-mkt{background:rgba(246,135,179,.08);color:var(--pink);border-color:rgba(246,135,179,.25)}
+
+/* MAIN */
+.wrap{max-width:1040px;margin:0 auto;padding:0 40px 100px}
+
+/* PHASE */
+.phase{margin-bottom:64px}
+.phase-top{display:flex;gap:20px;align-items:flex-start;padding-bottom:22px;border-bottom:1px solid var(--bdr);margin-bottom:28px}
+.phase-bar{width:3px;border-radius:2px;min-height:56px;flex-shrink:0;margin-top:4px}
+.phase-num{font-family:var(--mono);font-size:10px;color:var(--faint);letter-spacing:.14em;text-transform:uppercase;padding-top:6px;min-width:60px}
+.phase-info{flex:1}
+.phase-name{font-family:var(--disp);font-size:24px;font-weight:700;letter-spacing:-.01em;margin-bottom:6px}
+.phase-sub{font-size:14px;color:var(--muted);max-width:620px;line-height:1.7}
+.phase-meta{font-family:var(--mono);font-size:11px;color:var(--faint);margin-top:8px;letter-spacing:.04em}
+
+/* INSIGHT */
+.insight{border-left:3px solid var(--arch);background:rgba(123,156,255,.05);border-radius:0 10px 10px 0;padding:14px 18px;margin:0 0 24px}
+.insight.d{border-left-color:var(--data);background:rgba(246,171,53,.05)}
+.insight.e{border-left-color:var(--extra);background:rgba(79,209,197,.05)}
+.insight.g{border-left-color:var(--green);background:rgba(104,211,145,.05)}
+.insight.p{border-left-color:var(--pink);background:rgba(246,135,179,.05)}
+.it{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.insight .it{color:var(--arch)}
+.insight.d .it{color:var(--data)}
+.insight.e .it{color:var(--extra)}
+.insight.g .it{color:var(--green)}
+.insight.p .it{color:var(--pink)}
+.insight p{font-size:13px;color:var(--muted);line-height:1.7}
+.insight p strong{color:var(--text);font-weight:500}
+
+/* SEC LABEL */
+.sl{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--faint);margin:28px 0 12px}
+
+/* TOPIC ROW */
+.topic{background:var(--bg2);border:1px solid var(--bdr);border-radius:12px;padding:16px 20px;margin-bottom:8px}
+.topic-head{display:flex;align-items:flex-start;gap:12px;margin-bottom:6px}
+.topic-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;margin-top:1px}
+.topic-title{font-size:14px;font-weight:500;color:var(--text);line-height:1.4;flex:1}
+.topic-body{font-size:13px;color:var(--muted);line-height:1.7;padding-left:40px}
+.topic-body strong{color:var(--text);font-weight:500}
+.topic-body code{font-family:var(--mono);font-size:12px;background:var(--bg4);padding:1px 5px;border-radius:4px;color:var(--extra)}
+.tags{display:flex;gap:5px;flex-wrap:wrap;padding-left:40px;margin-top:8px}
+
+/* RESOURCE GRID */
+.rg{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:8px;margin-bottom:8px}
+.rc{background:var(--bg2);border:1px solid var(--bdr);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit;display:block;transition:border-color .18s,background .18s;position:relative}
+.rc:hover{border-color:var(--bdr2);background:var(--bg3)}
+.rc:hover .arr{opacity:1;transform:translate(0,0)}
+.rc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:5px}
+.rc-name{font-size:13px;font-weight:500;color:var(--text);line-height:1.4;flex:1}
+.arr{font-size:12px;color:var(--faint);opacity:0;transform:translate(-3px,1px);transition:.18s;flex-shrink:0}
+.rc-desc{font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:9px}
+.rc-tags{display:flex;gap:5px;flex-wrap:wrap}
+
+/* PROJECT */
+.proj{background:linear-gradient(135deg,rgba(123,156,255,.07),rgba(246,171,53,.04));border:1px solid rgba(123,156,255,.18);border-radius:14px;padding:22px 24px;margin:20px 0}
+.proj-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--arch);margin-bottom:10px}
+.proj-name{font-family:var(--disp);font-size:17px;font-weight:700;color:var(--text);margin-bottom:8px}
+.proj-desc{font-size:13px;color:var(--muted);line-height:1.75}
+.proj-desc strong{color:var(--text);font-weight:500}
+.proj-steps{list-style:none;padding:0;margin-top:12px;display:flex;flex-direction:column;gap:6px}
+.proj-steps li{font-size:12px;color:var(--muted);line-height:1.6;padding-left:18px;position:relative}
+.proj-steps li::before{content:'→';position:absolute;left:0;color:var(--arch);font-family:var(--mono)}
+
+/* MARKET BOX */
+.mkt{background:var(--bg2);border:1px solid var(--bdr);border-radius:12px;padding:18px 20px;margin-bottom:28px}
+.mkt-title{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);margin-bottom:12px}
+.mkt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}
+.mkt-item{background:var(--bg3);border-radius:8px;padding:10px 12px}
+.mkt-skill{font-size:12px;font-weight:500;color:var(--text);margin-bottom:3px}
+.mkt-level{font-size:11px;color:var(--muted);font-family:var(--mono)}
+.bar{height:3px;background:var(--bg4);border-radius:2px;margin-top:6px;overflow:hidden}
+.bar-fill{height:100%;border-radius:2px;background:var(--arch)}
+
+/* CERT BOX */
+.certs{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin-top:8px}
+.cert{background:var(--bg2);border:1px solid var(--bdr);border-radius:10px;padding:14px 16px;text-decoration:none;color:inherit;display:block;transition:.18s}
+.cert:hover{border-color:var(--bdr2);background:var(--bg3)}
+.cert-provider{font-family:var(--mono);font-size:10px;color:var(--faint);letter-spacing:.1em;margin-bottom:5px;text-transform:uppercase}
+.cert-name{font-size:13px;font-weight:500;color:var(--text);margin-bottom:5px;line-height:1.4}
+.cert-why{font-size:12px;color:var(--muted);line-height:1.5}
+
+/* DIVIDER */
+.div{border:none;border-top:1px solid var(--bdr);margin:56px 0}
+
+/* TIMELINE STRIP */
+.tl{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:32px}
+.tl-cell{background:var(--bg2);border:1px solid var(--bdr);border-radius:10px;padding:12px 14px;text-align:center}
+.tl-mo{font-family:var(--mono);font-size:11px;color:var(--faint);margin-bottom:6px}
+.tl-focus{font-size:12px;font-weight:500;color:var(--text);line-height:1.4}
+.tl-tag{display:inline-block;margin-top:6px;font-family:var(--mono);font-size:9px;padding:2px 6px;border-radius:4px}
+
+@media(max-width:640px){
+  .hero,.legendbar,.wrap{padding-left:18px;padding-right:18px}
+  .nav{padding:0 18px}
+  .rg,.tl{grid-template-columns:1fr}
+  .hero h1{font-size:30px}
+  .mkt-grid,.certs{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#fase0">00 · Fundação</a>
+  <a href="#fase1">01 · Arquitetura</a>
+  <a href="#fase2">02 · Containers</a>
+  <a href="#fase3">03 · Dados</a>
+  <a href="#fase4">04 · Cloud</a>
+  <a href="#fase5">05 · Unificação</a>
+  <a href="#mercado">Mercado</a>
+  <a href="#certs">Certs</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Roadmap Expandido · Anderson · 2025–2026</div>
+  <h1>De dev sênior<br>a <em>Arquiteto</em> de Software<br>+ <span>Ciência de Dados</span></h1>
+  <p>Cada tópico aprofundado. Cada recurso validado. Cada projeto conectado ao seu sistema real. Esta é a virada de chave — da teoria da pós à candidatura com portfólio sólido.</p>
+  <div class="kpis">
+    <div class="kpi"><span class="kpi-n" style="color:var(--arch)">6</span><span class="kpi-l">// fases</span></div>
+    <div class="kpi"><span class="kpi-n" style="color:var(--data)">50+</span><span class="kpi-l">// recursos</span></div>
+    <div class="kpi"><span class="kpi-n" style="color:var(--extra)">12</span><span class="kpi-l">// meses</span></div>
+    <div class="kpi"><span class="kpi-n" style="color:var(--green)">6</span><span class="kpi-l">// projetos práticos</span></div>
+  </div>
+</section>
+
+<!-- LEGEND -->
+<div class="legendbar">
+  <span class="lb-title">legenda //</span>
+  <div class="lb-item"><div class="lb-dot" style="background:var(--arch)"></div>Arquitetura</div>
+  <div class="lb-item"><div class="lb-dot" style="background:var(--data)"></div>Dados</div>
+  <div class="lb-item"><div class="lb-dot" style="background:var(--extra)"></div>Extra (além da pós)</div>
+  <div class="lb-item"><div class="lb-dot" style="background:var(--pink)"></div>Mercado BR</div>
+  <span class="chip chip-free">GRÁTIS</span>
+  <span class="chip chip-paid">PAGO</span>
+</div>
+
+<div class="wrap">
+
+<!-- TIMELINE -->
+<div class="sl">// linha do tempo — 12 meses</div>
+<div class="tl">
+  <div class="tl-cell"><div class="tl-mo">Mês 1–2</div><div class="tl-focus">Fundação + SOLID + Design Patterns</div><div class="tl-tag" style="background:var(--extra-bg);color:var(--extra)">Fase 00</div></div>
+  <div class="tl-cell"><div class="tl-mo">Mês 3–4</div><div class="tl-focus">Padrões arquiteturais + DDD + C4</div><div class="tl-tag" style="background:var(--arch-bg);color:var(--arch)">Fase 01</div></div>
+  <div class="tl-cell"><div class="tl-mo">Mês 5–6</div><div class="tl-focus">Docker + Kafka + Microsserviços práticos</div><div class="tl-tag" style="background:var(--extra-bg);color:var(--extra)">Fase 02</div></div>
+  <div class="tl-cell"><div class="tl-mo">Mês 7–8</div><div class="tl-focus">Spark + Pipelines ETL/ELT + NoSQL</div><div class="tl-tag" style="background:var(--data-bg);color:var(--data)">Fase 03</div></div>
+  <div class="tl-cell"><div class="tl-mo">Mês 9–10</div><div class="tl-focus">AWS + CI/CD + Terraform + K8s</div><div class="tl-tag" style="background:var(--extra-bg);color:var(--extra)">Fase 04</div></div>
+  <div class="tl-cell"><div class="tl-mo">Mês 11–12</div><div class="tl-focus">Data Mesh + Portfólio + Entrevistas</div><div class="tl-tag" style="background:var(--arch-bg);color:var(--arch)">Fase 05</div></div>
+</div>
+
+<hr class="div">
+
+<!-- FASE 0 -->
+<section class="phase" id="fase0">
+  <div class="phase-top">
+    <div class="phase-bar" style="background:var(--extra)"></div>
+    <div class="phase-num">fase_00</div>
+    <div class="phase-info">
+      <div class="phase-name">Fundação silenciosa — o que a pós não ensina</div>
+      <div class="phase-sub">Antes de padrões arquiteturais e pipelines, existem três pilares invisíveis que fazem toda a diferença. Sem eles, você vai decorar conceitos. Com eles, vai entender mecanismos.</div>
+      <div class="phase-meta">⏱ 2 meses · Nível: iniciante → intermediário · Extra além da pós</div>
+    </div>
+  </div>
+
+  <div class="insight e">
+    <div class="it">⚡ por que isso vem antes de tudo</div>
+    <p>Imagina tentar consertar um motor sem entender como a combustão funciona. Você pode apertar parafusos — mas quando algo der errado, você não vai saber o porquê. <strong>SOLID, Design Patterns e networking são o combustível que faz tudo fazer sentido.</strong> Arquitetos que não têm essa base sólida tomam decisões por convenção, não por raciocínio.</p>
+  </div>
+
+  <div class="sl">// tópicos aprofundados</div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--extra-bg)">🧱</div>
+      <div class="topic-title">SOLID — os 5 princípios que explicam o Spring Boot</div>
+    </div>
+    <div class="topic-body">
+      Você provavelmente já aplica SOLID sem saber o nome. O Spring usa cada princípio internamente:<br><br>
+      <strong>S — Single Responsibility:</strong> cada bean faz uma coisa só (<code>@Service</code>, <code>@Repository</code>).<br>
+      <strong>O — Open/Closed:</strong> você estende comportamento com <code>@Primary</code> e interfaces, não reescreve código.<br>
+      <strong>L — Liskov Substitution:</strong> seus repositórios JPA implementam interfaces — substitutos transparentes.<br>
+      <strong>I — Interface Segregation:</strong> <code>JpaRepository</code> vs <code>CrudRepository</code> — interfaces específicas para cada caso.<br>
+      <strong>D — Dependency Inversion:</strong> o coração da injeção de dependência do Spring.<br><br>
+      <strong>Meta:</strong> conseguir identificar e nomear violações de SOLID em um code review.
+    </div>
+    <div class="tags"><span class="chip chip-arch">Arquitetura</span><span class="chip chip-ext">Extra</span></div>
+  </div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--arch-bg)">🎨</div>
+      <div class="topic-title">Design Patterns (GoF) — o vocabulário do arquiteto</div>
+    </div>
+    <div class="topic-body">
+      Não precisa decorar todos os 23 padrões. Precisa entender os mais usados no ecossistema Java:<br><br>
+      <strong>Factory / Abstract Factory:</strong> como o Spring cria beans.<br>
+      <strong>Singleton:</strong> escopo padrão de todo bean Spring.<br>
+      <strong>Strategy:</strong> troca de algoritmos em tempo de execução — base de qualquer regra de negócio extensível.<br>
+      <strong>Observer:</strong> base dos eventos Spring (<code>ApplicationEventPublisher</code>) e do Kafka.<br>
+      <strong>Decorator:</strong> como o Spring AOP funciona por baixo dos panos.<br>
+      <strong>Builder:</strong> você já usa no Lombok com <code>@Builder</code>.<br>
+      <strong>CQRS pattern:</strong> separação Command/Query que vai aparecer em 3 fases deste roadmap.<br><br>
+      <strong>Meta:</strong> quando alguém falar "usa Strategy aqui", você saber implementar imediatamente.
+    </div>
+    <div class="tags"><span class="chip chip-arch">Arquitetura</span><span class="chip chip-ext">Extra</span></div>
+  </div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:rgba(246,135,179,.1)">🌐</div>
+      <div class="topic-title">Networking & protocolos — a anatomia do arquiteto</div>
+    </div>
+    <div class="topic-body">
+      Um arquiteto de microsserviços que não entende networking é como médico sem anatomia. Você não precisa ser sysadmin — precisa entender o suficiente para tomar decisões:<br><br>
+      <strong>HTTP/1.1 vs HTTP/2 vs HTTP/3:</strong> por que HTTP/2 multiplexado muda a equação de microsserviços.<br>
+      <strong>TCP vs UDP:</strong> por que Kafka usa TCP e não UDP.<br>
+      <strong>DNS & Load Balancing:</strong> o que acontece antes do seu Spring Boot receber a requisição.<br>
+      <strong>TLS/mTLS:</strong> como microsserviços se autenticam mutuamente — crítico para DevSecOps.<br>
+      <strong>REST vs gRPC vs GraphQL:</strong> cada um tem trade-offs reais — aprenda quando escolher cada um.<br><br>
+      <strong>Meta:</strong> conseguir explicar o que acontece nos bastidores de uma chamada HTTP entre dois microsserviços.
+    </div>
+    <div class="tags"><span class="chip chip-arch">Arquitetura</span><span class="chip chip-ext">Extra</span></div>
+  </div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--green-bg)">📐</div>
+      <div class="topic-title">Diagramas C4 — a linguagem visual do arquiteto</div>
+    </div>
+    <div class="topic-body">
+      O modelo C4 (Simon Brown) é o padrão de facto para documentar arquitetura no mercado brasileiro. São 4 níveis:<br><br>
+      <strong>Context:</strong> seu sistema no mundo — o que ele faz e com quem interage.<br>
+      <strong>Container:</strong> as "caixas" que compõem seu sistema (API, banco, fila, frontend).<br>
+      <strong>Component:</strong> o que tem dentro de cada caixa (controllers, services, repos).<br>
+      <strong>Code:</strong> diagramas UML se necessário (geralmente desnecessário).<br><br>
+      <strong>Ferramentas:</strong> use <a href="https://excalidraw.com" target="_blank" style="color:var(--arch)">Excalidraw</a> (grátis, colaborativo) ou <a href="https://structurizr.com" target="_blank" style="color:var(--arch)">Structurizr</a> (C4 nativo, tem free tier).<br><br>
+      <strong>Meta:</strong> documentar sua API atual com C4 Nível 1 e 2 antes de terminar este mês.
+    </div>
+    <div class="tags"><span class="chip chip-arch">Arquitetura</span><span class="chip chip-free">GRÁTIS</span></div>
+  </div>
+
+  <div class="sl">// recursos</div>
+  <div class="rg">
+    <a href="https://www.youtube.com/@ByteByteGo" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">ByteByteGo — YouTube</div><div class="arr">↗</div></div>
+      <div class="rc-desc">Alex Xu · Diagramas animados de sistemas reais. Assista: "SOLID Principles Explained", "REST vs GraphQL vs gRPC", "How does HTTP work?"</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-arch">Arquitetura</span></div>
+    </a>
+    <a href="https://www.youtube.com/@hnasr" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">Hussein Nasser — YouTube</div><div class="arr">↗</div></div>
+      <div class="rc-desc">Série "Fundamentals of Backend Engineering". Networking, protocolos, DB internals com código ao vivo. Nível arquiteto.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-arch">Arquitetura</span></div>
+    </a>
+    <a href="https://github.com/ByteByteGoHq/system-design-101" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">System Design 101 — GitHub</div><div class="arr">↗</div></div>
+      <div class="rc-desc">Repositório com 100+ diagramas visuais gratuitos cobrindo APIs, bancos, CDN, cache, segurança. Bookmark obrigatório.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-arch">Arquitetura</span></div>
+    </a>
+    <a href="https://www.udemy.com/course/software-architecture-design-of-modern-large-scale-systems/" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">Software Architecture & Design — Pogrebinsky</div><div class="arr">↗</div></div>
+      <div class="rc-desc">Udemy · Best-seller para Java devs. Cobre SOLID, padrões, trade-offs e Big Data architecture com casos reais.</div>
+      <div class="rc-tags"><span class="chip chip-paid">PAGO</span><span class="chip chip-arch">Arquitetura</span></div>
+    </a>
+    <a href="https://excalidraw.com" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">Excalidraw — Diagramação C4</div><div class="arr">↗</div></div>
+      <div class="rc-desc">Ferramenta gratuita online. Perfeita para C4 e rascunhos arquiteturais rápidos. Use para documentar sua API atual.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-arch">Arquitetura</span></div>
+    </a>
+    <a href="https://roadmap.sh/software-architect" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">roadmap.sh — Software Architect 2026</div><div class="arr">↗</div></div>
+      <div class="rc-desc">Mapa interativo de todas as skills de um arquiteto. Use como checklist semanal para medir seu progresso.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-arch">Arquitetura</span></div>
+    </a>
+  </div>
+
+  <div class="proj">
+    <div class="proj-lbl">// projeto prático 00</div>
+    <div class="proj-name">Diagrama C4 da API de avaliações + auditoria SOLID</div>
+    <div class="proj-desc">Pegue sua API de ciclos de avaliação e faça dois entregáveis antes de avançar:</div>
+    <ul class="proj-steps">
+      <li>Desenhe o <strong>diagrama C4 nível Context</strong>: seu sistema, os usuários e sistemas externos com quem ele se comunica</li>
+      <li>Desenhe o <strong>diagrama C4 nível Container</strong>: API Spring Boot, banco PostgreSQL, frontend (se existir)</li>
+      <li>Percorra 3 classes do seu código e <strong>identifique por escrito</strong> quais princípios SOLID estão sendo violados</li>
+      <li>Proponha refatorações — você não precisa implementar, só argumentar</li>
+      <li>Suba tudo num repositório GitHub com um README explicando as decisões</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- FASE 1 -->
+<section class="phase" id="fase1">
+  <div class="phase-top">
+    <div class="phase-bar" style="background:var(--arch)"></div>
+    <div class="phase-num">fase_01</div>
+    <div class="phase-info">
+      <div class="phase-name">Padrões Arquiteturais — do diagrama à decisão</div>
+      <div class="phase-sub">A pós ensina os padrões. Esta fase ensina a raciocinar sobre eles: quando usar, quando não usar, como defender uma escolha para um time e para um CTO.</div>
+      <div class="phase-meta">⏱ 2 meses · Nível: intermediário · Alinha com disciplina da pós: Padrões Arquiteturais</div>
+    </div>
+  </div>
+
+  <div class="insight">
+    <div class="it">⚡ a virada de mentalidade</div>
+    <p>Devs escolhem tecnologias. Arquitetos escolhem <strong>trade-offs</strong>. A pergunta nunca é "qual padrão é melhor?" — é "quais são os requisitos não-funcionais deste sistema? Qual padrão resolve o maior problema com o menor custo?". Uma pesquisa de 2025 analisando 411 vagas de arquiteto no Brasil mostrou que a skill mais cobrada não é uma tecnologia, é a capacidade de <strong>"planejar e implementar atividades arquiteturais"</strong>.</p>
+  </div>
+
+  <div class="sl">// tópicos aprofundados</div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--arch-bg)">🔀</div>
+      <div class="topic-title">Monólito vs Microsserviços — a decisão honesta que ninguém ensina</div>
+    </div>
+    <div class="topic-body">
+      <strong>95% dos sistemas que "precisam" de microsserviços não precisam.</strong> Entender isso é o que separa um arquiteto honesto de um que segue tendências.<br><br>
+      <strong>Microsserviços fazem sentido quando:</strong> times independentes precisam fazer deploy sem coordenar entre si, domínios de negócio têm ciclos de vida e requisitos de escala muito distintos, e você tem maturidade de operação para gerenciar a complexidade.<br><br>
+      <strong>Monólito modular faz sentido quando:</strong> time pequeno/médio, domínio não está completamente mapeado ainda, necessidade de velocidade de desenvolvimento.<br><br>
+      <strong>Padrão Strangler Fig:</strong> como migrar um monólito gradualmente sem reescrever tudo — cria uma "casca" ao redor do sistema legado e vai substituindo partes incrementalmente. Sua API atual provavelmente é candidata a esse padrão.
+    </div>
+    <div class="tags"><span class="chip chip-arch">Arquitetura</span></div>
+  </div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--arch-bg)">📡</div>
+      <div class="topic-title">Event-Driven Architecture (EDA) — desacoplamento real</div>
+    </div>
+    <div class="topic-body">
+      Em vez do Serviço A chamar o Serviço B diretamente (acoplamento temporal e de disponibilidade), A publica um evento numa fila. B consome quando puder. Se B cair, o evento ainda está lá esperando.<br><br>
+      <strong>Conceitos essenciais:</strong><br>
+      <code>Event</code> — algo que aconteceu: "CicloDeAvaliação.Finalizado"<br>
+      <code>Command</code> — uma intenção: "FinalizarCicloDeAvaliacao"<br>
+      <code>Eventual Consistency</code> — o estado do sistema converge ao longo do tempo, não é imediato<br>
+      <code>Outbox Pattern</code> — garante que o evento seja publicado mesmo se o banco e o Kafka transacionarem separados<br><br>
+      <strong>Para o seu contexto:</strong> todo ciclo de avaliação finalizado poderia ser um evento que dispara múltiplos consumidores: notificação, relatório analítico, log de auditoria.
+    </div>
+    <div class="tags"><span class="chip chip-arch">Arquitetura</span><span class="chip chip-ext">Extra</span></div>
+  </div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--arch-bg)">✂️</div>
+      <div class="topic-title">CQRS + Event Sourcing — leitura e escrita separadas</div>
+    </div>
+    <div class="topic-body">
+      <strong>CQRS (Command Query Responsibility Segregation):</strong> o modelo de escrita e o modelo de leitura são diferentes. Você escreve em um banco normalizado, e lê de uma view otimizada (pode ser Redis, Elasticsearch, ou outra tabela).<br><br>
+      <strong>Por que isso importa para dados:</strong> quando você separar leitura de escrita, a "leitura" pode ser um pipeline analítico — você acabou de criar a ponte entre arquitetura transacional e arquitetura de dados.<br><br>
+      <strong>Event Sourcing:</strong> em vez de salvar o estado atual, você salva todos os eventos que geraram esse estado. O histórico completo de mudanças vira o dado em si — base natural para auditoria, replay e análise temporal. Pense em seu sistema de avaliações: cada mudança de nota, cada aprovação, cada feedback vira um evento imutável.
+    </div>
+    <div class="tags"><span class="chip chip-arch">Arquitetura</span><span class="chip chip-data">Dados</span></div>
+  </div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--arch-bg)">🗺️</div>
+      <div class="topic-title">Domain-Driven Design (DDD) — o mapa que faltava</div>
+    </div>
+    <div class="topic-body">
+      DDD é a forma de modelar software com base no vocabulário do negócio, não da tecnologia. É o conceito mais impactante que a pós não cobre diretamente.<br><br>
+      <strong>Bounded Context:</strong> uma fronteira clara onde um conceito tem um significado específico. "Funcionário" no contexto de RH é diferente de "Funcionário" no contexto de Folha de Pagamento — são entidades distintas com atributos distintos.<br><br>
+      <strong>Aggregate:</strong> um cluster de objetos com uma raiz consistente — só você acessa de fora. <code>CicloDeAvaliacao</code> com seus <code>Itens</code> provavelmente é um Aggregate.<br><br>
+      <strong>Ubiquitous Language:</strong> o vocabulário que devs e especialistas de negócio compartilham. Quando um produto fala "ciclo" e o código chama "period", existe uma lacuna — DDD elimina isso.<br><br>
+      <strong>Para microsserviços:</strong> cada Bounded Context é um candidato natural a microsserviço independente. Este é o critério real de separação, não "separar por tamanho de código".
+    </div>
+    <div class="tags"><span class="chip chip-arch">Arquitetura</span></div>
+  </div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--arch-bg)">📊</div>
+      <div class="topic-title">Architecture Decision Records (ADRs) — como arquitetos registram decisões</div>
+    </div>
+    <div class="topic-body">
+      Um ADR é um documento curto que registra uma decisão arquitetural: o contexto, as opções consideradas, a decisão tomada e as consequências. É a prova documental de que você pensa como arquiteto.<br><br>
+      <strong>Template básico:</strong> Título, Status (proposto/aceito/substituído), Contexto, Decisão, Consequências.<br><br>
+      <strong>Por que isso importa nas entrevistas:</strong> arquitetos são cobrados por suas decisões passadas. Ter ADRs no seu portfólio GitHub mostra maturidade de processo — não é só quem fez, é quem documentou o raciocínio.<br><br>
+      <strong>Ferramenta:</strong> <a href="https://adr.github.io" target="_blank" style="color:var(--arch)">adr.github.io</a> tem templates prontos e ferramentas CLI para gerenciar ADRs no repositório.
+    </div>
+    <div class="tags"><span class="chip chip-arch">Arquitetura</span><span class="chip chip-free">GRÁTIS</span></div>
+  </div>
+
+  <div class="sl">// recursos</div>
+  <div class="rg">
+    <a href="https://www.udemy.com/course/software-architecture-design-of-modern-large-scale-systems/" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">Software Architecture & Design — Pogrebinsky (Udemy)</div><div class="arr">↗</div></div>
+      <div class="rc-desc">Best-seller com casos reais. Cobre EDA, CQRS, trade-offs e Big Data. Ideal pós-SOLID.</div>
+      <div class="rc-tags"><span class="chip chip-paid">PAGO</span><span class="chip chip-arch">Arquitetura</span></div>
+    </a>
+    <a href="https://www.youtube.com/@ByteByteGo" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">ByteByteGo — Microservices & DDD (YouTube)</div><div class="arr">↗</div></div>
+      <div class="rc-desc">Playlist: "Microservices vs Monolith", "Event-Driven Architecture", "CQRS explained". 10–15min por vídeo, diagramas visuais.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-arch">Arquitetura</span></div>
+    </a>
+    <a href="https://www.youtube.com/@hnasr" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">Hussein Nasser — CQRS, Pub-Sub, Event Sourcing</div><div class="arr">↗</div></div>
+      <div class="rc-desc">YouTube · Vídeos individuais por tópico com código. Explicações profundas sobre por que cada padrão existe.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-arch">Arquitetura</span></div>
+    </a>
+    <a href="https://www.youtube.com/@freecodecamp" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">System Design Full Course — freeCodeCamp</div><div class="arr">↗</div></div>
+      <div class="rc-desc">YouTube · Curso completo gratuito 8h+ cobrindo design de sistemas reais como Twitter, YouTube, Uber.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-arch">Arquitetura</span></div>
+    </a>
+    <a href="https://adr.github.io" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">ADR GitHub — Architecture Decision Records</div><div class="arr">↗</div></div>
+      <div class="rc-desc">Templates e ferramentas para criar ADRs no seu repositório. Obrigatório para o portfólio de arquiteto.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-arch">Arquitetura</span></div>
+    </a>
+    <a href="https://github.com/ByteByteGoHq/system-design-101" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">System Design 101 — GitHub</div><div class="arr">↗</div></div>
+      <div class="rc-desc">Referência visual para todos os padrões desta fase. Use para revisar cada conceito com diagramas.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-arch">Arquitetura</span></div>
+    </a>
+  </div>
+
+  <div class="proj">
+    <div class="proj-lbl">// projeto prático 01</div>
+    <div class="proj-name">Redesign arquitetural da API com argumentação formal</div>
+    <div class="proj-desc">Pegue o diagrama C4 do projeto anterior e proponha um redesign documentado. O entregável é um conjunto de ADRs no GitHub — não código, argumentação:</div>
+    <ul class="proj-steps">
+      <li><strong>ADR-001:</strong> Monólito ou microsserviços? Argumente com base no tamanho do time, domínios e requisitos</li>
+      <li><strong>ADR-002:</strong> Quais módulos são Bounded Contexts distintos? (RH, Avaliação, Hierarquia, Relatórios)</li>
+      <li><strong>ADR-003:</strong> Onde aplicar CQRS? Identifique pelo menos um endpoint de leitura que poderia ter modelo separado</li>
+      <li><strong>ADR-004:</strong> Quais eventos de negócio existem no sistema? Liste pelo menos 5 (<em>CicloFinalizado, NotaAtribuída, ColaboradorAdicionado...</em>)</li>
+      <li>Atualize o diagrama C4 refletindo as decisões dos ADRs — este é o diagrama "to-be" do sistema</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- FASE 2 -->
+<section class="phase" id="fase2">
+  <div class="phase-top">
+    <div class="phase-bar" style="background:var(--extra)"></div>
+    <div class="phase-num">fase_02</div>
+    <div class="phase-info">
+      <div class="phase-name">Containers, Kafka e Microsserviços na prática</div>
+      <div class="phase-sub">A pós fala sobre microsserviços. Esta fase é onde você coloca a mão no terminal. Não existe arquiteto de microsserviços que nunca rodou um container. Esta é a ponte entre o diagrama e a realidade.</div>
+      <div class="phase-meta">⏱ 2 meses · Nível: intermediário · Extra além da pós — mas pré-requisito do mercado</div>
+    </div>
+  </div>
+
+  <div class="insight e">
+    <div class="it">⚡ por que está aqui e não na pós</div>
+    <p>Docker e Kafka não estão na ementa, mas <strong>aparecem como requisito em vagas de arquiteto no Brasil</strong>. Isso não é coincidência — são as ferramentas que transformam diagramas em sistemas reais. Um arquiteto que nunca containerizou uma aplicação não consegue validar suas próprias decisões.</p>
+  </div>
+
+  <div class="sl">// tópicos aprofundados</div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--extra-bg)">🐳</div>
+      <div class="topic-title">Docker — containerize seu Spring Boot em menos de 1 dia</div>
+    </div>
+    <div class="topic-body">
+      Um container é uma "caixa portátil" com tudo que sua aplicação precisa: JDK, dependências, variáveis de ambiente. Elimina o "funciona na minha máquina".<br><br>
+      <strong>O que você precisa saber:</strong><br>
+      <code>Dockerfile</code> — como sua imagem é construída (FROM, COPY, RUN, EXPOSE, ENTRYPOINT)<br>
+      <code>docker-compose.yml</code> — como múltiplos serviços orquestram juntos (API + PostgreSQL + Kafka)<br>
+      <code>Multi-stage builds</code> — como criar imagens menores e mais seguras (build separado do runtime)<br>
+      <code>Volumes e networks</code> — como dados persistem e serviços se comunicam<br><br>
+      <strong>Primeiro exercício:</strong> crie um <code>Dockerfile</code> para sua API Spring Boot. Suba com <code>docker-compose</code> junto com o PostgreSQL. Quando funcionar, você entendeu Docker.
+    </div>
+    <div class="tags"><span class="chip chip-ext">Extra</span><span class="chip chip-free">GRÁTIS</span></div>
+  </div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--extra-bg)">⚡</div>
+      <div class="topic-title">Apache Kafka — o sistema nervoso de microsserviços</div>
+    </div>
+    <div class="topic-body">
+      Kafka é um sistema de streaming distribuído. Em vez de A chamar B diretamente, A publica uma mensagem num <em>topic</em>. B consome quando disponível. O dado fica armazenado por tempo configurável.<br><br>
+      <strong>Conceitos em ordem de aprendizado:</strong><br>
+      <code>Topic</code> — um "canal" de mensagens (ex: <em>ciclos-finalizados</em>)<br>
+      <code>Producer</code> — quem publica mensagens (sua API Spring Boot)<br>
+      <code>Consumer</code> — quem consome (relatórios, notificações, pipeline de dados)<br>
+      <code>Partition</code> — divisão paralela de um topic (escalabilidade horizontal)<br>
+      <code>Consumer Group</code> — múltiplas instâncias de um consumer dividindo o trabalho<br>
+      <code>Offset</code> — a posição de leitura de cada consumer — Kafka nunca "apaga" por padrão<br><br>
+      <strong>Para Java devs:</strong> Kafka usa Java nativamente. O <code>spring-kafka</code> transforma producers e consumers em simples anotações: <code>@KafkaListener</code>.
+    </div>
+    <div class="tags"><span class="chip chip-ext">Extra</span><span class="chip chip-data">Dados</span></div>
+  </div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--extra-bg)">☸️</div>
+      <div class="topic-title">Kubernetes (K8s) — quando docker-compose não é suficiente</div>
+    </div>
+    <div class="topic-body">
+      Se Docker é "empacotar", Kubernetes é "gerenciar muitos containers em produção". Cuida de restart automático, scaling horizontal, health checks e rollouts sem downtime.<br><br>
+      <strong>Os 4 objetos que você precisa dominar primeiro:</strong><br>
+      <code>Pod</code> — a menor unidade: um ou mais containers rodando juntos<br>
+      <code>Deployment</code> — declara quantas réplicas do seu Pod você quer e gerencia rollouts<br>
+      <code>Service</code> — expõe seu Pod com um IP estável (load balance interno)<br>
+      <code>ConfigMap / Secret</code> — variáveis de ambiente e credenciais desacopladas da imagem<br><br>
+      <strong>Estratégia de estudo:</strong> comece com minikube local ou Kind (Kubernetes in Docker) — sem custo de cloud. Suba sua API Spring Boot no K8s local antes de ir para AWS.
+    </div>
+    <div class="tags"><span class="chip chip-ext">Extra</span></div>
+  </div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--extra-bg)">🔌</div>
+      <div class="topic-title">API Gateway + Service Mesh — o que vem depois dos microsserviços</div>
+    </div>
+    <div class="topic-body">
+      Quando você tem 5+ microsserviços, o caos de comunicação precisa de gestão centralizada:<br><br>
+      <strong>API Gateway</strong> (Kong, AWS API Gateway, Spring Cloud Gateway): ponto único de entrada para clientes externos. Cuida de autenticação, rate limiting, roteamento e logging.<br><br>
+      <strong>Service Mesh</strong> (Istio, Linkerd): gestão de comunicação <em>entre</em> serviços internos — mTLS automático, circuit breakers, observability. É a "rede inteligente" invisível.<br><br>
+      <strong>Circuit Breaker</strong> (Resilience4j no Spring): quando um serviço está falhando, você "abre o circuito" para evitar cascata de falhas. Conceito crítico para arquiteto — aprenda Resilience4j que já integra com Spring Boot.
+    </div>
+    <div class="tags"><span class="chip chip-arch">Arquitetura</span><span class="chip chip-ext">Extra</span></div>
+  </div>
+
+  <div class="sl">// recursos</div>
+  <div class="rg">
+    <a href="https://www.youtube.com/@TechWorldwithNana" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">TechWorld with Nana — Docker & Kubernetes</div><div class="arr">↗</div></div>
+      <div class="rc-desc">YouTube · Melhor canal gratuito de DevOps. "Docker Tutorial for Beginners" (3h) e "Kubernetes Tutorial" (4h) são os vídeos de referência.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-ext">Extra</span></div>
+    </a>
+    <a href="https://www.udemy.com/course/apache-kafka/" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">Apache Kafka for Beginners v3 — Stéphane Maarek</div><div class="arr">↗</div></div>
+      <div class="rc-desc">Udemy · 130k+ alunos · Atualizado para Kafka 4.0 · Projetos em Java com Spring Kafka. O melhor curso pago de Kafka.</div>
+      <div class="rc-tags"><span class="chip chip-paid">PAGO</span><span class="chip chip-ext">Extra</span></div>
+    </a>
+    <a href="https://www.youtube.com/@amigoscodeofficial" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">Amigoscode — Kafka com Spring Boot (YouTube)</div><div class="arr">↗</div></div>
+      <div class="rc-desc">Canal de Nelson Djalo. Série gratuita de Kafka com Java/Spring Boot — ideal para quem já tem contexto Spring.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-ext">Extra</span></div>
+    </a>
+    <a href="https://www.youtube.com/@freecodecamp" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">Kubernetes Full Course — freeCodeCamp</div><div class="arr">↗</div></div>
+      <div class="rc-desc">YouTube · Curso completo gratuito de K8s do zero ao deploy real em produção.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-ext">Extra</span></div>
+    </a>
+    <a href="https://github.com/DataTalksClub/data-engineering-zoomcamp" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">Data Engineering Zoomcamp — DataTalksClub</div><div class="arr">↗</div></div>
+      <div class="rc-desc">GitHub · Curso gratuito de 9 semanas com Kafka, Spark, Airflow, SQL e Cloud. Hands-on do início ao fim.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-data">Dados</span></div>
+    </a>
+    <a href="https://www.classcentral.com/course/youtube-1-2-billion-records-per-hour-high-performance-kafka-and-spark-end-to-end-data-engineering-project-390990" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">1.2 Bilhão records/h — Kafka + Spark End-to-End</div><div class="arr">↗</div></div>
+      <div class="rc-desc">YouTube (CodeWithYu) · Projeto completo gratuito: arquitetura, Kafka producer Java, Spark consumer, Grafana + Prometheus.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-data">Dados</span></div>
+    </a>
+  </div>
+
+  <div class="proj">
+    <div class="proj-lbl">// projeto prático 02</div>
+    <div class="proj-name">Pipeline de eventos com Kafka + Docker Compose</div>
+    <div class="proj-desc">Implemente o primeiro componente real da sua arquitetura de dados:</div>
+    <ul class="proj-steps">
+      <li>Adicione <strong>spring-kafka</strong> à sua API e crie um <code>KafkaProducer</code> que publica o evento <code>CicloFinalizado</code> sempre que um ciclo é encerrado</li>
+      <li>Crie um <strong>segundo microsserviço Java</strong> (Spring Boot simples) com um <code>@KafkaListener</code> que consome esse evento e salva em um segundo banco (simulando um schema analítico)</li>
+      <li>Configure um <strong>docker-compose.yml</strong> com: API principal, consumer service, PostgreSQL (2 databases), Kafka, Zookeeper, e Kafka UI (Redpanda Console — gratuito)</li>
+      <li>Escreva um <strong>ADR-005</strong> documentando por que você escolheu Kafka em vez de chamada REST direta entre os serviços</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- FASE 3 -->
+<section class="phase" id="fase3">
+  <div class="phase-top">
+    <div class="phase-bar" style="background:var(--data)"></div>
+    <div class="phase-num">fase_03</div>
+    <div class="phase-info">
+      <div class="phase-name">Ciência de Dados — do pipeline ao insight</div>
+      <div class="phase-sub">A pós cobre Agile Data Science e Big Data em alto nível. Esta fase é onde você entende o que acontece dentro de um pipeline real e como arquitetar sistemas que servem ciência de dados — com as ferramentas que o mercado paga mais.</div>
+      <div class="phase-meta">⏱ 2 meses · Nível: intermediário → avançado · Alinha com disciplinas da pós: Ciência de Dados + Big Data</div>
+    </div>
+  </div>
+
+  <div class="insight d">
+    <div class="it">⚡ a conexão que poucos fazem</div>
+    <p>Engenheiros que entendem de dados valem mais porque são raros. Você já sabe construir APIs que <em>geram</em> dados — agora aprenda a <strong>arquitetar sistemas que transformam esses dados em inteligência de negócio</strong>. Kafka (fase anterior) é a entrada dos dados. Spark é o motor que os processa. Airflow é quem orquestra tudo. Esta é a tríade do engenheiro de dados moderno.</p>
+  </div>
+
+  <div class="sl">// tópicos aprofundados</div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--data-bg)">🗃️</div>
+      <div class="topic-title">SQL avançado — a base que você já tem, mas não aprofundou</div>
+    </div>
+    <div class="topic-body">
+      PostgreSQL já é sua especialidade. Mas SQL analítico é diferente de SQL transacional. Antes de ir para NoSQL e Spark, aprofunde o que você já tem:<br><br>
+      <strong>Window Functions</strong> — <code>ROW_NUMBER()</code>, <code>RANK()</code>, <code>LAG()</code>, <code>LEAD()</code>, <code>SUM() OVER(PARTITION BY)</code>. Essenciais para relatórios analíticos sem precisar de Spark.<br><br>
+      <strong>CTEs (Common Table Expressions)</strong> — consultas legíveis e reutilizáveis dentro de um SELECT. Substitui subqueries aninhadas.<br><br>
+      <strong>Query Planning</strong> — <code>EXPLAIN ANALYZE</code>: entender como o PostgreSQL executa sua query e onde está o gargalo. Crítico para otimização de APIs com queries lentas.<br><br>
+      <strong>Particionamento de tabelas</strong> — divide uma tabela grande em partes por data, ID ou outra coluna. Reduz drásticamente o tempo de queries analíticas em tabelas com milhões de linhas.
+    </div>
+    <div class="tags"><span class="chip chip-data">Dados</span></div>
+  </div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--data-bg)">🔄</div>
+      <div class="topic-title">ETL/ELT — o coração de qualquer pipeline de dados</div>
+    </div>
+    <div class="topic-body">
+      <strong>ETL (Extract, Transform, Load):</strong> extrai de uma fonte, transforma os dados, carrega no destino. A transformação acontece antes de chegar no warehouse.<br><br>
+      <strong>ELT (Extract, Load, Transform):</strong> carrega bruto primeiro, transforma dentro do warehouse (BigQuery, Snowflake). Mais comum em arquiteturas modernas porque os warehouses são poderosos o suficiente para transformar.<br><br>
+      <strong>Tipos de carga:</strong><br>
+      <code>Full Load</code> — recarrega tudo. Simples, mas caro em dados grandes.<br>
+      <code>Incremental Load</code> — só o que mudou desde a última carga. Precisa de <em>watermark</em> (timestamp ou ID crescente).<br>
+      <code>CDC (Change Data Capture)</code> — captura mudanças direto do WAL (Write-Ahead Log) do banco. Ferramenta: Debezium + Kafka.<br><br>
+      <strong>Para o seu contexto:</strong> os eventos Kafka da fase anterior já são um pipeline ELT: o consumer extrai (consome o Kafka), carrega no banco analítico, e a transformação pode acontecer depois com Spark ou dbt.
+    </div>
+    <div class="tags"><span class="chip chip-data">Dados</span></div>
+  </div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--data-bg)">⚡</div>
+      <div class="topic-title">Apache Spark — processamento distribuído em Java</div>
+    </div>
+    <div class="topic-body">
+      Spark é escrito em Scala/Java. Se você já tem fluência em Java, a API do Spark vai parecer familiar. É o motor padrão para processar dados que não cabem em memória de uma máquina.<br><br>
+      <strong>Sequência de aprendizado:</strong><br>
+      1. <strong>RDD (Resilient Distributed Dataset)</strong> — a abstração base. Entenda o conceito mesmo sem usar muito no dia a dia.<br>
+      2. <strong>DataFrame API</strong> — similar ao SQL/Pandas. Você vai passar 90% do tempo aqui.<br>
+      3. <strong>Spark SQL</strong> — escreva SQL direto no Spark contra DataFrames. Ponte natural para quem já sabe SQL.<br>
+      4. <strong>Spark Structured Streaming</strong> — processa Kafka em tempo real com a mesma API de batch. É aqui que os eventos da fase 2 se transformam em dados analíticos em tempo quase real.<br><br>
+      <strong>Otimizações essenciais:</strong> particionamento, caching, broadcast joins, evitar shuffles desnecessários.
+    </div>
+    <div class="tags"><span class="chip chip-data">Dados</span><span class="chip chip-ext">Extra</span></div>
+  </div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--data-bg)">🌊</div>
+      <div class="topic-title">Apache Airflow — o maestro dos pipelines</div>
+    </div>
+    <div class="topic-body">
+      Airflow é o orquestrador de workflows de dados mais usado no mundo. Você descreve tarefas como um <strong>DAG (Directed Acyclic Graph)</strong> em Python — uma série de passos com dependências.<br><br>
+      <strong>Exemplo de DAG para o seu sistema:</strong><br>
+      <code>extrai_dados_kafka</code> → <code>processa_com_spark</code> → <code>carrega_no_warehouse</code> → <code>atualiza_dashboard</code><br><br>
+      <strong>Por que não apenas cron jobs?</strong> Airflow tem retry automático, alertas de falha, visualização gráfica do pipeline, e histórico de execuções. É a diferença entre pipeline artesanal e pipeline de produção.<br><br>
+      <strong>Alternativas modernas:</strong> Prefect e Dagster têm APIs mais amigáveis para Python, mas Airflow ainda domina o mercado corporativo brasileiro.
+    </div>
+    <div class="tags"><span class="chip chip-data">Dados</span><span class="chip chip-ext">Extra</span></div>
+  </div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--data-bg)">🏛️</div>
+      <div class="topic-title">Data Warehouse vs Data Lake vs Data Lakehouse — o triângulo da decisão</div>
+    </div>
+    <div class="topic-body">
+      Como arquiteto, você vai ser perguntado sobre isso em entrevistas. Aprenda os critérios reais de decisão:<br><br>
+      <strong>Data Warehouse</strong> (Snowflake, BigQuery, Redshift): dados estruturados, schema definido, otimizado para queries analíticas. Caro, mas muito rápido para BI. Use quando os dados já chegam limpos.<br><br>
+      <strong>Data Lake</strong> (S3 + Parquet, HDFS): dados brutos em qualquer formato. Barato, flexível, mas precisa de governança forte para não virar um "data swamp".<br><br>
+      <strong>Data Lakehouse</strong> (Delta Lake, Apache Iceberg, Apache Hudi): combina o melhor dos dois — armazenamento barato do lake com capacidade transacional e ACID do warehouse. É o padrão mais moderno e o que você vai construir no projeto prático.<br><br>
+      <strong>NoSQL para dados operacionais:</strong> MongoDB (documentos flexíveis), Redis (cache + sessão + filas), Cassandra (writes massivos com alta disponibilidade — usado pelo Itaú e grandes bancos).
+    </div>
+    <div class="tags"><span class="chip chip-data">Dados</span></div>
+  </div>
+
+  <div class="sl">// recursos</div>
+  <div class="rg">
+    <a href="https://github.com/DataTalksClub/data-engineering-zoomcamp" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">Data Engineering Zoomcamp — DataTalksClub</div><div class="arr">↗</div></div>
+      <div class="rc-desc">Grátis · 9 semanas · Kafka, Spark, Airflow, BigQuery, dbt, Terraform. O melhor curso gratuito de eng. de dados existente. Próxima turma: Jan 2026.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-data">Dados</span></div>
+    </a>
+    <a href="https://www.udemy.com/course/the-ultimate-apache-spark-with-java-course-hands-on/" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">Master Apache Spark — Java Hands-On (Udemy)</div><div class="arr">↗</div></div>
+      <div class="rc-desc">RDDs, DataFrames, SparkSQL, Structured Streaming com Kafka + AWS EMR. Tudo em Java — ideal para o seu perfil.</div>
+      <div class="rc-tags"><span class="chip chip-paid">PAGO</span><span class="chip chip-data">Dados</span></div>
+    </a>
+    <a href="https://www.udemy.com/course/data-engineering-using-kafka-and-spark-structured-streaming/" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">Data Engineering: Kafka + Spark Streaming (Udemy)</div><div class="arr">↗</div></div>
+      <div class="rc-desc">Pipeline streaming end-to-end: ingestão via Kafka → processamento com Spark Structured Streaming → saída em HDFS/S3.</div>
+      <div class="rc-tags"><span class="chip chip-paid">PAGO</span><span class="chip chip-data">Dados</span></div>
+    </a>
+    <a href="https://www.youtube.com/@hnasr" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">OLTP vs OLAP vs Data Warehouse — Hussein Nasser</div><div class="arr">↗</div></div>
+      <div class="rc-desc">YouTube · Série sobre bancos de dados para análise, diferença entre cargas transacionais e analíticas.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-data">Dados</span></div>
+    </a>
+    <a href="https://roadmap.sh/data-engineer" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">roadmap.sh — Data Engineer 2026</div><div class="arr">↗</div></div>
+      <div class="rc-desc">Mapa visual interativo de todas as skills de eng. de dados. Use como checklist paralelo a esta fase.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-data">Dados</span></div>
+    </a>
+    <a href="https://www.youtube.com/@freecodecamp" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">PostgreSQL Advanced & Apache Airflow — freeCodeCamp</div><div class="arr">↗</div></div>
+      <div class="rc-desc">YouTube · Cursos completos gratuitos: Window Functions, CTEs, query optimization + orquestração com Airflow.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-data">Dados</span></div>
+    </a>
+  </div>
+
+  <div class="proj">
+    <div class="proj-lbl">// projeto prático 03</div>
+    <div class="proj-name">Pipeline analítico com Spark Structured Streaming</div>
+    <div class="proj-desc">Consuma os eventos Kafka do projeto 02 com Apache Spark e construa o primeiro layer analítico:</div>
+    <ul class="proj-steps">
+      <li>Configure <strong>Spark Structured Streaming</strong> consumindo o topic <code>ciclos-finalizados</code> do Kafka</li>
+      <li>Transforme os dados: <strong>agregações por departamento</strong> (total de ciclos, média de notas), por gestor, e por período</li>
+      <li>Persista os resultados em formato <strong>Parquet</strong> particionado por data (seu mini data lake) e em uma tabela PostgreSQL analítica separada</li>
+      <li>Crie uma <strong>Window Function</strong> no PostgreSQL que calcula a tendência de nota dos últimos 3 ciclos por colaborador</li>
+      <li>Documente o pipeline com um <strong>diagrama de fluxo de dados</strong> no Excalidraw e adicione ao repositório</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- FASE 4 -->
+<section class="phase" id="fase4">
+  <div class="phase-top">
+    <div class="phase-bar" style="background:var(--extra)"></div>
+    <div class="phase-num">fase_04</div>
+    <div class="phase-info">
+      <div class="phase-name">Cloud, CI/CD e Infraestrutura como Código</div>
+      <div class="phase-sub">Um arquiteto que não sabe Cloud não consegue validar suas próprias decisões arquiteturais. Esta fase conecta seus diagramas com infraestrutura real na AWS — onde a maioria das vagas de arquiteto no Brasil exige experiência.</div>
+      <div class="phase-meta">⏱ 2 meses · Nível: intermediário → avançado · Alinha com Migração para Cloud + DevOps da pós</div>
+    </div>
+  </div>
+
+  <div class="insight e">
+    <div class="it">⚡ o que as vagas pedem</div>
+    <p>Das 411 vagas de arquiteto analisadas no Brasil em 2025, <strong>AWS/Azure aparece como top skill ao lado de Java e APIs</strong>. A certificação AWS Solutions Architect foi mencionada em menos de 10% das vagas — o que as empresas querem é demonstração prática de que você consegue tomar decisões em Cloud, não um certificado no papel.</p>
+  </div>
+
+  <div class="sl">// tópicos aprofundados</div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--extra-bg)">☁️</div>
+      <div class="topic-title">AWS para arquitetos — os serviços que importam</div>
+    </div>
+    <div class="topic-body">
+      Não precisa saber tudo da AWS. Precisa saber o que cada serviço resolve e quando escolher cada um:<br><br>
+      <strong>Compute:</strong> <code>EC2</code> (servidor virtual — controle total), <code>ECS/Fargate</code> (containers gerenciados), <code>Lambda</code> (serverless — pay per use), <code>EKS</code> (Kubernetes gerenciado)<br><br>
+      <strong>Armazenamento:</strong> <code>S3</code> (objetos — data lake, backups, static assets), <code>EBS</code> (disco para EC2), <code>EFS</code> (filesystem compartilhado)<br><br>
+      <strong>Banco de dados:</strong> <code>RDS</code> (PostgreSQL gerenciado — zero ops), <code>DynamoDB</code> (NoSQL serverless), <code>ElastiCache</code> (Redis gerenciado)<br><br>
+      <strong>Mensageria para dados:</strong> <code>MSK</code> (Kafka gerenciado), <code>SQS</code> (filas simples), <code>Kinesis</code> (streaming de dados similar ao Kafka)<br><br>
+      <strong>Dados:</strong> <code>Glue</code> (ETL serverless), <code>Athena</code> (query SQL no S3), <code>Redshift</code> (data warehouse), <code>EMR</code> (Spark gerenciado)
+    </div>
+    <div class="tags"><span class="chip chip-ext">Extra</span></div>
+  </div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--extra-bg)">🔁</div>
+      <div class="topic-title">CI/CD com GitHub Actions — do commit ao deploy automático</div>
+    </div>
+    <div class="topic-body">
+      Pipeline de entrega contínua: código commitado → testes rodam → build Docker → push para ECR → deploy no ECS/K8s. Sem intervenção manual.<br><br>
+      <strong>Para Java/Spring Boot, o pipeline padrão é:</strong><br>
+      <code>checkout</code> → <code>mvn test</code> → <code>mvn package</code> → <code>docker build</code> → <code>docker push</code> → <code>kubectl apply</code> (ou ECS deploy)<br><br>
+      <strong>Conceitos de qualidade no pipeline:</strong> SAST (análise estática de segurança — SonarCloud grátis para open source), cobertura de testes mínima, e quality gates que bloqueiam o deploy se algo falhar.<br><br>
+      <strong>Branch strategy:</strong> aprenda GitFlow vs trunk-based development — arquitetos precisam opinar sobre estratégia de branches, não só código.
+    </div>
+    <div class="tags"><span class="chip chip-ext">Extra</span></div>
+  </div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--extra-bg)">🏗️</div>
+      <div class="topic-title">Terraform — Infrastructure as Code básico mas sólido</div>
+    </div>
+    <div class="topic-body">
+      Em vez de criar recursos na AWS clicando no console (que não tem versionamento, não é reproduzível, e quebra quando alguém esquece o que fez), você descreve a infraestrutura em código HCL.<br><br>
+      <strong>O que você precisa dominar para começar:</strong><br>
+      <code>provider</code> — qual cloud (AWS, GCP, Azure)<br>
+      <code>resource</code> — o que criar (EC2, RDS, S3, VPC)<br>
+      <code>variable</code> — parametrização (ambiente, tamanho da instância)<br>
+      <code>output</code> — o que retornar após apply (endereço do banco, ARN do bucket)<br>
+      <code>state</code> — onde o Terraform guarda o estado atual da infra<br><br>
+      <strong>Meta:</strong> criar com Terraform o ambiente AWS para o projeto prático (VPC, RDS, S3, ECS ou EC2 para a API).
+    </div>
+    <div class="tags"><span class="chip chip-ext">Extra</span></div>
+  </div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--extra-bg)">📈</div>
+      <div class="topic-title">Observabilidade — métricas, logs e traces distribuídos</div>
+    </div>
+    <div class="topic-body">
+      Em sistemas distribuídos, "o servidor caiu" não é suficiente. Você precisa saber <em>qual</em> serviço falhou, <em>em qual instância</em>, <em>qual request causou isso</em>, e quanto tempo cada operação levou.<br><br>
+      <strong>Os três pilares:</strong><br>
+      <code>Métricas</code> — números ao longo do tempo: requests/s, latência p99, CPU. Stack: <strong>Prometheus + Grafana</strong><br>
+      <code>Logs</code> — eventos textuais estruturados (JSON). Stack: <strong>ELK (Elasticsearch + Logstash + Kibana)</strong> ou CloudWatch<br>
+      <code>Traces</code> — o rastro de uma requisição através de múltiplos serviços. Stack: <strong>Jaeger ou OpenTelemetry</strong><br><br>
+      <strong>Para Spring Boot:</strong> Micrometer (incluído no Actuator) exporta métricas automaticamente para Prometheus. OpenTelemetry tem SDK Java que instrumenta automaticamente.
+    </div>
+    <div class="tags"><span class="chip chip-arch">Arquitetura</span><span class="chip chip-ext">Extra</span></div>
+  </div>
+
+  <div class="sl">// recursos</div>
+  <div class="rg">
+    <a href="https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03/" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">AWS Solutions Architect SAA-C03 — Stéphane Maarek</div><div class="arr">↗</div></div>
+      <div class="rc-desc">Udemy · O melhor curso de AWS para devs indo para arquiteto. 27h, hands-on, cobre todos os serviços com decisões reais.</div>
+      <div class="rc-tags"><span class="chip chip-paid">PAGO</span><span class="chip chip-ext">Extra</span></div>
+    </a>
+    <a href="https://www.youtube.com/@TechWorldwithNana" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">TechWorld with Nana — CI/CD & Terraform</div><div class="arr">↗</div></div>
+      <div class="rc-desc">YouTube · "Complete CI/CD Pipeline" e "Terraform Tutorial for Beginners". Tutoriais hands-on gratuitos.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-ext">Extra</span></div>
+    </a>
+    <a href="https://www.youtube.com/@ByteByteGo" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">ByteByteGo — Cloud Architecture Patterns</div><div class="arr">↗</div></div>
+      <div class="rc-desc">YouTube · Como Netflix, Uber e Airbnb usam Cloud na prática. Fundamentais para entrevistas de arquiteto.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-arch">Arquitetura</span></div>
+    </a>
+    <a href="https://www.youtube.com/@freecodecamp" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">Terraform, GitHub Actions & AWS — freeCodeCamp</div><div class="arr">↗</div></div>
+      <div class="rc-desc">YouTube · Cursos completos gratuitos de IaC, CI/CD e deploy na AWS. Hands-on do zero.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-ext">Extra</span></div>
+    </a>
+  </div>
+
+  <div class="proj">
+    <div class="proj-lbl">// projeto prático 04</div>
+    <div class="proj-name">Deploy da arquitetura completa na AWS com CI/CD</div>
+    <div class="proj-desc">Leve os projetos anteriores para a nuvem:</div>
+    <ul class="proj-steps">
+      <li>Crie o ambiente AWS com <strong>Terraform</strong>: VPC, subnets, Security Groups, RDS (PostgreSQL), S3 bucket para o data lake, e ECS para a API</li>
+      <li>Configure um <strong>GitHub Actions workflow</strong> que testa, builda a imagem Docker, faz push para ECR e deploya no ECS automaticamente a cada push na main</li>
+      <li>Suba um <strong>Kafka gerenciado</strong> (AWS MSK free tier ou Confluent Cloud free tier) e conecte com o consumer Spark</li>
+      <li>Configure <strong>Prometheus + Grafana</strong> (pode ser no docker-compose local ou EC2 free tier) com um dashboard mostrando requests/s da API e throughput do Kafka</li>
+      <li>Documente o custo estimado mensal da arquitetura — isso é perguntado em entrevistas de arquiteto</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- FASE 5 -->
+<section class="phase" id="fase5">
+  <div class="phase-top">
+    <div class="phase-bar" style="background:linear-gradient(to bottom,var(--arch),var(--data))"></div>
+    <div class="phase-num">fase_05</div>
+    <div class="phase-info">
+      <div class="phase-name">Unificação — o perfil que o mercado paga caro</div>
+      <div class="phase-sub">Esta fase une tudo: arquitetura de software + dados em uma visão sistêmica completa. Data Mesh, MLOps e o portfólio de candidatura. É aqui que você deixa de ser dev e passa a ser arquiteto.</div>
+      <div class="phase-meta">⏱ 2 meses · Nível: avançado · Portfólio + candidatura</div>
+    </div>
+  </div>
+
+  <div class="insight">
+    <div class="it">⚡ o perfil raro que o mercado paga caro</div>
+    <p>Arquiteto de dados não é data scientist nem engenheiro de software — é quem <strong>projeta o sistema completo</strong>: APIs que geram dados, pipelines que os transformam, modelos que os consomem, e dashboards que os exibem. No Brasil, o mercado sente falta de profissionais que conseguem transitar entre esses dois mundos com fluência técnica real.</p>
+  </div>
+
+  <div class="sl">// tópicos aprofundados</div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--arch-bg)">🕸️</div>
+      <div class="topic-title">Data Mesh — dados como produto de domínio</div>
+    </div>
+    <div class="topic-body">
+      Data Mesh é o paradigma mais moderno de arquitetura de dados: em vez de um data lake centralizado (que vira um "data swamp" gerenciado por um time sobrecarregado), cada domínio de negócio é dono dos seus dados e os expõe como produto.<br><br>
+      <strong>Os 4 princípios do Data Mesh:</strong><br>
+      1. <strong>Domain Ownership:</strong> o time de RH é dono dos dados de RH — não o time central de dados<br>
+      2. <strong>Data as a Product:</strong> cada domínio expõe seus dados com qualidade, documentação e SLA garantidos<br>
+      3. <strong>Self-serve Data Platform:</strong> plataforma que permite times criarem pipelines sem depender do time central<br>
+      4. <strong>Federated Computational Governance:</strong> regras globais (LGPD, segurança) aplicadas federadamente<br><br>
+      <strong>Conexão com DDD:</strong> os Bounded Contexts da fase 1 viram Data Products. É o mesmo raciocínio de separação de domínios, agora aplicado aos dados.
+    </div>
+    <div class="tags"><span class="chip chip-arch">Arquitetura</span><span class="chip chip-data">Dados</span></div>
+  </div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--data-bg)">🤖</div>
+      <div class="topic-title">MLOps — arquitetando sistemas de Machine Learning</div>
+    </div>
+    <div class="topic-body">
+      Como arquiteto, você não precisa criar modelos de ML — precisa saber <strong>projetar o sistema que os sustenta em produção</strong>. Treinar um modelo é 10% do trabalho. Os outros 90% são operação.<br><br>
+      <strong>Os componentes de um sistema MLOps:</strong><br>
+      <code>Feature Store</code> — repositório centralizado de features reutilizáveis entre modelos<br>
+      <code>Model Registry</code> — versionamento de modelos (MLflow)<br>
+      <code>CI/CD para modelos</code> — pipeline de retreino automático quando dados mudam<br>
+      <code>Model Monitoring</code> — detecção de data drift (quando o mundo mudou e o modelo ficou defasado)<br>
+      <code>A/B Testing</code> — comparação de modelos em produção com divisão de tráfego<br><br>
+      <strong>Ferramenta básica:</strong> MLflow (open source) para tracking de experimentos e model registry. Integra com Spark e qualquer linguagem.
+    </div>
+    <div class="tags"><span class="chip chip-data">Dados</span><span class="chip chip-ext">Extra</span></div>
+  </div>
+
+  <div class="topic">
+    <div class="topic-head">
+      <div class="topic-icon" style="background:var(--green-bg)">🧭</div>
+      <div class="topic-title">Governança de dados — LGPD, lineage e qualidade</div>
+    </div>
+    <div class="topic-body">
+      Dados sem governança viram problema jurídico e de confiança. A pós cobre LGPD em alto nível — vá além:<br><br>
+      <strong>Data Lineage:</strong> o rastro de onde cada dado veio e como foi transformado. Quando um relatório financeiro estiver errado, você consegue rastrear qual etapa do pipeline corrompeu o dado. Ferramentas: Apache Atlas, OpenLineage.<br><br>
+      <strong>Data Quality:</strong> expectativas formais sobre os dados — "esta coluna não pode ser nula", "este valor deve estar entre 0 e 100". Ferramenta: Great Expectations (Python), mas o conceito é linguagem-agnóstico.<br><br>
+      <strong>Data Catalog:</strong> onde os dados estão, o que significam, quem é dono. Reduz o tempo que engenheiros gastam procurando dados. Ferramentas: Apache Atlas, DataHub (LinkedIn, open source), AWS Glue Data Catalog.
+    </div>
+    <div class="tags"><span class="chip chip-data">Dados</span></div>
+  </div>
+
+  <div class="sl">// recursos</div>
+  <div class="rg">
+    <a href="https://airbyte.com/data-engineering-resources/data-engineering-roadmap" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">Modern Data Engineering Roadmap — Airbyte</div><div class="arr">↗</div></div>
+      <div class="rc-desc">Guia gratuito 2025: real-time streaming, AI/ML integration, data governance e o futuro da engenharia de dados.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-data">Dados</span></div>
+    </a>
+    <a href="https://www.montecarlodata.com/blog-the-2025-data-engineer-roadmap/" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">Data Engineer Roadmap 2025 — Monte Carlo</div><div class="arr">↗</div></div>
+      <div class="rc-desc">Guia gratuito com foco no que realmente diferencia: qualidade de dados, MLOps, AI como parceiro do engenheiro.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-data">Dados</span></div>
+    </a>
+    <a href="https://www.youtube.com/@ByteByteGo" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">ByteByteGo — Data Architecture & MLOps</div><div class="arr">↗</div></div>
+      <div class="rc-desc">YouTube · "What is a Data Mesh?", "How Netflix does MLOps", "Data Lakehouse explained". Série completa.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-arch">Arquitetura</span></div>
+    </a>
+    <a href="https://github.com/data-burst/data-engineering-roadmap" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">Data Engineering Roadmap — DataBurst (GitHub)</div><div class="arr">↗</div></div>
+      <div class="rc-desc">Roadmap gratuito com versão Cloud. Para cada ferramenta do roadmap traditional, mostra o equivalente em AWS, Azure e GCP.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-data">Dados</span></div>
+    </a>
+  </div>
+
+  <div class="proj">
+    <div class="proj-lbl">// projeto final — portfólio de candidatura</div>
+    <div class="proj-name">Sistema de Avaliações com Inteligência Analítica Completa</div>
+    <div class="proj-desc">Una tudo que foi construído nas fases anteriores em um portfólio coeso e documentado. Este é o projeto que você apresenta em entrevistas:</div>
+    <ul class="proj-steps">
+      <li><strong>API Spring Boot</strong> containerizada, com eventos Kafka, deploy via CI/CD na AWS</li>
+      <li><strong>Pipeline Spark Structured Streaming</strong> consumindo Kafka em tempo quase real e gravando em data lake S3 (Parquet/Iceberg)</li>
+      <li><strong>Data Warehouse analítico</strong> (PostgreSQL schema separado ou Redshift) com queries otimizadas</li>
+      <li><strong>Dashboard Grafana</strong> com métricas: throughput do pipeline, latência end-to-end, qualidade dos dados</li>
+      <li><strong>README arquitetural completo</strong> no GitHub: diagrama C4, ADRs de todas as decisões, diagrama do pipeline de dados, custo estimado, e como rodar localmente com docker-compose</li>
+      <li><strong>Bônus:</strong> adicione um modelo simples de ML (regressão linear) que prediz a nota esperada de um colaborador no próximo ciclo com base no histórico — implemente tracking com MLflow</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- MERCADO -->
+<section class="phase" id="mercado">
+  <div class="phase-top">
+    <div class="phase-bar" style="background:var(--pink)"></div>
+    <div class="phase-num">mercado</div>
+    <div class="phase-info">
+      <div class="phase-name">O que as vagas realmente pedem no Brasil</div>
+      <div class="phase-sub">Dados de 411 vagas de arquiteto analisadas em 2025 no Glassdoor Brasil. Use isso para calibrar onde investir energia.</div>
+    </div>
+  </div>
+
+  <div class="mkt">
+    <div class="mkt-title">// skills mais demandadas em vagas de arquiteto BR — 2025</div>
+    <div class="mkt-grid">
+      <div class="mkt-item"><div class="mkt-skill">APIs / REST</div><div class="mkt-level">TOP 1</div><div class="bar"><div class="bar-fill" style="width:98%;background:var(--arch)"></div></div></div>
+      <div class="mkt-item"><div class="mkt-skill">Java</div><div class="mkt-level">TOP 2</div><div class="bar"><div class="bar-fill" style="width:95%;background:var(--arch)"></div></div></div>
+      <div class="mkt-item"><div class="mkt-skill">AWS / Azure</div><div class="mkt-level">TOP 3</div><div class="bar"><div class="bar-fill" style="width:90%;background:var(--extra)"></div></div></div>
+      <div class="mkt-item"><div class="mkt-skill">DevOps / CI-CD</div><div class="mkt-level">TOP 4</div><div class="bar"><div class="bar-fill" style="width:85%;background:var(--extra)"></div></div></div>
+      <div class="mkt-item"><div class="mkt-skill">Microservices</div><div class="mkt-level">ALTO</div><div class="bar"><div class="bar-fill" style="width:80%;background:var(--arch)"></div></div></div>
+      <div class="mkt-item"><div class="mkt-skill">Docker / K8s</div><div class="mkt-level">ALTO</div><div class="bar"><div class="bar-fill" style="width:78%;background:var(--extra)"></div></div></div>
+      <div class="mkt-item"><div class="mkt-skill">Kafka / Streaming</div><div class="mkt-level">CRESCENDO</div><div class="bar"><div class="bar-fill" style="width:70%;background:var(--data)"></div></div></div>
+      <div class="mkt-item"><div class="mkt-skill">Design Patterns</div><div class="mkt-level">FUNDAMENTAL</div><div class="bar"><div class="bar-fill" style="width:75%;background:var(--arch)"></div></div></div>
+      <div class="mkt-item"><div class="mkt-skill">Big Data / Spark</div><div class="mkt-level">DIFERENCIAL</div><div class="bar"><div class="bar-fill" style="width:55%;background:var(--data)"></div></div></div>
+      <div class="mkt-item"><div class="mkt-skill">Inglês</div><div class="mkt-level">OBRIGATÓRIO</div><div class="bar"><div class="bar-fill" style="width:85%;background:var(--pink)"></div></div></div>
+      <div class="mkt-item"><div class="mkt-skill">System Design</div><div class="mkt-level">ENTREVISTA</div><div class="bar"><div class="bar-fill" style="width:90%;background:var(--arch)"></div></div></div>
+      <div class="mkt-item"><div class="mkt-skill">DDD / SOLID</div><div class="mkt-level">DIFERENCIAL</div><div class="bar"><div class="bar-fill" style="width:65%;background:var(--arch)"></div></div></div>
+    </div>
+  </div>
+
+  <div class="insight p">
+    <div class="it">⚡ sobre inglês</div>
+    <p>Aparece em quase toda vaga de arquiteto. <strong>Não precisa ser fluente para se candidatar</strong> — precisa conseguir ler documentação técnica, participar de calls e escrever e-mails formais. Se ainda não tem, reserve 20 minutos por dia para leitura de artigos técnicos em inglês. Em 6 meses a diferença é enorme.</p>
+  </div>
+
+  <div class="insight g">
+    <div class="it">// como se preparar para a entrevista de arquiteto</div>
+    <p>Em entrevistas de arquiteto, você será perguntado a <strong>desenhar sistemas em tempo real</strong>: "Como você arquitetaria um sistema de notificações para 10 milhões de usuários?" O treinamento para isso é o ByteByteGo e o freeCodeCamp System Design. Pratique desenhando sistemas em voz alta, explicando os trade-offs de cada decisão. <strong>ADRs no seu portfólio GitHub são a prova mais concreta de que você já faz isso.</strong></p>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- CERTS -->
+<section class="phase" id="certs">
+  <div class="phase-top">
+    <div class="phase-bar" style="background:var(--green)"></div>
+    <div class="phase-num">certs</div>
+    <div class="phase-info">
+      <div class="phase-name">Certificações — quando e o que vale</div>
+      <div class="phase-sub">Menos de 10% das vagas pedem certificações explicitamente. Mas elas ajudam a estruturar o aprendizado e comprovam profundidade. Foco nas que têm mais retorno.</div>
+    </div>
+  </div>
+
+  <div class="sl">// certificações recomendadas por prioridade</div>
+  <div class="certs">
+    <a href="https://aws.amazon.com/certification/certified-solutions-architect-associate/" target="_blank" class="cert">
+      <div class="cert-provider">AWS // Prioridade 1</div>
+      <div class="cert-name">AWS Certified Solutions Architect Associate (SAA-C03)</div>
+      <div class="cert-why">A mais pedida no Brasil. Valida conhecimento de Cloud para arquitetos. Faça após a Fase 4. Curso Maarek no Udemy prepara completamente.</div>
+    </a>
+    <a href="https://cloud.google.com/certification/data-engineer" target="_blank" class="cert">
+      <div class="cert-provider">Google Cloud // Prioridade 2</div>
+      <div class="cert-name">Professional Data Engineer</div>
+      <div class="cert-why">Valida arquitetura de dados em Cloud. Reconhecido mundialmente. Complementa o SAA-C03 para o perfil Arquiteto + Dados.</div>
+    </a>
+    <a href="https://developer.confluent.io/courses/apache-kafka/get-started/" target="_blank" class="cert">
+      <div class="cert-provider">Confluent // Prioridade 3</div>
+      <div class="cert-name">Confluent Certified Developer for Apache Kafka</div>
+      <div class="cert-why">Validação específica de Kafka — diferencial real para vagas que envolvem streaming e dados em tempo real. O treinamento online é gratuito.</div>
+    </a>
+    <a href="https://kubernetes.io/training/ckad/" target="_blank" class="cert">
+      <div class="cert-provider">CNCF // Complementar</div>
+      <div class="cert-name">CKAD — Certified Kubernetes Application Developer</div>
+      <div class="cert-why">Foca em uso do K8s para devs — não administração de cluster. Mais rápido de obter que o CKA e relevante para arquiteto de microsserviços.</div>
+    </a>
+  </div>
+
+  <div class="sl" style="margin-top:28px">// consumo contínuo — o que fica na rotina semanal</div>
+  <div class="rg">
+    <a href="https://www.youtube.com/@ByteByteGo" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">ByteByteGo</div><div class="arr">↗</div></div>
+      <div class="rc-desc">2–3 vídeos por semana, 10min cada. Mantém vocabulário de sistemas atual. O melhor investimento de tempo desta lista.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-arch">Arquitetura</span></div>
+    </a>
+    <a href="https://www.youtube.com/@hnasr" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">Hussein Nasser</div><div class="arr">↗</div></div>
+      <div class="rc-desc">1 vídeo por semana. Profundidade técnica real — banco de dados internos, protocolos, backend avançado.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-arch">Arquitetura</span></div>
+    </a>
+    <a href="https://blog.bytebytego.com" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">ByteByteGo Newsletter</div><div class="arr">↗</div></div>
+      <div class="rc-desc">Email semanal com diagramas de sistemas reais. Leitura de 5 minutos que vale mais que horas de curso.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-arch">Arquitetura</span></div>
+    </a>
+    <a href="https://www.montecarlodata.com/blog-the-2025-data-engineer-roadmap/" target="_blank" class="rc">
+      <div class="rc-top"><div class="rc-name">Monte Carlo Blog — Data Engineering</div><div class="arr">↗</div></div>
+      <div class="rc-desc">Blog técnico com foco em qualidade de dados, observabilidade e tendências de engenharia de dados.</div>
+      <div class="rc-tags"><span class="chip chip-free">GRÁTIS</span><span class="chip chip-data">Dados</span></div>
+    </a>
+  </div>
+</section>
+
+</div>
+
+<footer style="max-width:1040px;margin:0 auto;padding:32px 40px 60px;border-top:1px solid var(--bdr);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+  <span style="font-family:var(--mono);font-size:11px;color:var(--faint)">// roadmap v2.0 · março 2026 · revisar a cada 6 meses</span>
+  <span style="font-family:var(--mono);font-size:11px;color:var(--faint)">Anderson · De sênior a arquiteto</span>
+</footer>
+
+<script>
+const links = document.querySelectorAll('.nav a');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      links.forEach(l => l.classList.remove('active'));
+      const id = e.target.id;
+      const a = document.querySelector('.nav a[href="#'+id+'"]');
+      if (a) a.classList.add('active');
+    }
+  });
+}, {threshold: 0.2});
+document.querySelectorAll('section[id]').forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
